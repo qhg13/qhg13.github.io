@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Name | Personal Homepage</title>
+    <meta name="description" content="A personal homepage for profile, study notes, projects, and blog posts.">
+    <link rel="stylesheet" href="assets/style.css">
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top">Your Name</a>
+        <div class="nav-links">
+          <a href="blog.html">Writing</a>
+          <a href="#focus">Focus</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 首屏承载最重要的信息：身份、入口和个人卡片。 -->
+      <section class="hero-shell section">
+        <div class="hero-copy">
+          <p class="eyebrow">Personal Homepage + Study Notes</p>
+          <h1>Build, learn, write, repeat.</h1>
+          <p class="lead">
+            A clean personal space for profile, study notes, course projects, and technical writing. Replace this text with your own background, interests, and goals.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="blog.html">Recent Writing</a>
+            <a class="button secondary" href="#projects">Selected Projects</a>
+          </div>
+          <div class="quick-links" aria-label="Quick links">
+            <a href="blog.html">Blog Archive</a>
+            <a href="#projects">Projects</a>
+            <a href="mailto:your-email@example.com">Email</a>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="Profile card">
+          <div class="avatar-frame">
+            <img src="assets/avatar.svg" alt="Avatar placeholder">
+          </div>
+          <p class="nickname">Your Nickname</p>
+          <h2>Your Name</h2>
+          <p>
+            Student and builder interested in computer science, AI applications, web systems, and clear technical notes.
+          </p>
+          <div class="tags" aria-label="Interest tags">
+            <span>AI</span>
+            <span>Web</span>
+            <span>Notes</span>
+          </div>
+        </aside>
+      </section>
+
+      <!-- 卡片区域用于快速说明主页内容和当前学习方向。 -->
+      <section class="section feature-grid" id="about">
+        <article class="panel about-panel">
+          <p class="eyebrow">About</p>
+          <h2>Your Name</h2>
+          <p>
+            This homepage collects public information about my study path, project practice, and writing archive. It is designed for GitHub Pages and can be maintained as a lightweight portfolio.
+          </p>
+          <p>
+            You can replace this section with your university, major, research interests, course experience, and long-term plan.
+          </p>
+        </article>
+
+        <article class="panel focus-panel" id="focus">
+          <p class="eyebrow">Current Focus</p>
+          <h2>Learning Roadmap</h2>
+          <div class="stat-list">
+            <div><strong>01</strong><span>Computer Science Foundations</span></div>
+            <div><strong>02</strong><span>AI Tools and Applications</span></div>
+            <div><strong>03</strong><span>Web Design and Deployment</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="writing">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Writing</p>
+            <h2><a href="blog.html">Recent Writing</a></h2>
+          </div>
+          <a class="text-link" href="blog.html">Open Archive</a>
+        </div>
+        <div class="grid three-columns">
+          <article class="card writing-card">
+            <p class="card-kicker">Study Note</p>
+            <h3><a href="posts/2026-05-02-github-pages-homepage.html">Building a Personal Homepage with GitHub Pages</a></h3>
+            <p>A lightweight workflow for building a personal homepage with GitHub Pages, Jekyll, and Markdown.</p>
+            <a class="text-link" href="posts/2026-05-02-github-pages-homepage.html">Read more</a>
+          </article>
+          <article class="card writing-card">
+            <p class="card-kicker">Technical Note</p>
+            <h3><a href="blog.html">Web Frontend Learning Notes</a></h3>
+            <p>Future notes can summarize HTML, CSS, responsive layout, and static site deployment.</p>
+            <a class="text-link" href="blog.html">Open archive</a>
+          </article>
+          <article class="card muted-card">
+            <p class="card-kicker">More Posts</p>
+            <h3><a href="blog.html">Browse the Blog Archive</a></h3>
+            <p>Future notes can cover course summaries, paper reading, project reviews, and learning reflections.</p>
+            <a class="text-link" href="blog.html">View archive</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Projects</p>
+            <h2>Selected Projects</h2>
+          </div>
+        </div>
+        <div class="project-list">
+          <article class="project-item">
+            <div>
+              <p class="card-kicker">Homepage</p>
+              <h3>GitHub Pages Personal Site</h3>
+              <p>A static personal homepage with profile, writing archive, project cards, and Jekyll-powered Markdown posts.</p>
+            </div>
+            <a class="text-link" href="https://github.com/your-github-username/your-github-username.github.io">Repository</a>
+          </article>
+          <article class="project-item">
+            <div>
+              <p class="card-kicker">Course Project</p>
+              <h3>Course Project Placeholder</h3>
+              <p>Replace this card with a real course assignment, experiment, competition project, or personal prototype.</p>
+            </div>
+            <a class="text-link" href="#contact">Coming soon</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <p class="eyebrow">Contact</p>
+        <h2>Let us connect.</h2>
+        <ul>
+          <li><a href="mailto:your-email@example.com">your-email@example.com</a></li>
+          <li><a href="https://github.com/your-github-username">GitHub</a></li>
+          <li><a href="blog.html">Blog Archive</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Your Name. Built with GitHub Pages and Jekyll.</p>
+    </footer>
+  </body>
+</html>

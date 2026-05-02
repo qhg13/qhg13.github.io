@@ -1,0 +1,51 @@
+---
+title: Blog | Your Name
+description: Blog archive for study notes, project reviews, and technical writing.
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="{{ '/index.html' | relative_url }}">Your Name</a>
+        <div class="nav-links">
+          <a href="{{ '/index.html#about' | relative_url }}">About</a>
+          <a href="{{ '/index.html#projects' | relative_url }}">Projects</a>
+          <a href="{{ '/index.html#contact' | relative_url }}">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="narrow-main">
+      <section class="section page-title">
+        <p class="eyebrow">Blog Archive</p>
+        <h1>Writing, notes, and project logs.</h1>
+        <p class="lead">Markdown posts are stored in <code>_posts/</code> and published by GitHub Pages through Jekyll.</p>
+      </section>
+
+      <section class="section archive-list" aria-label="Blog posts">
+        {% for post in site.posts %}
+        <article class="archive-item">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+          <div>
+            <p class="card-kicker">{{ post.category | default: 'Note' }}</p>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p><a href="{{ '/index.html' | relative_url }}">Back to Home</a></p>
+    </footer>
+  </body>
+</html>

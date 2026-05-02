@@ -1,0 +1,15 @@
+title: Your Name
+description: Personal homepage, study notes, projects, and blog archive.
+url: "https://your-github-username.github.io"
+baseurl: ""
+timezone: Asia/Shanghai
+permalink: /posts/:year-:month-:day-:title.html
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: Your Name

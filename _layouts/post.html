@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 150 }}">
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="{{ '/index.html' | relative_url }}">{{ site.title }}</a>
+        <div class="nav-links">
+          <a href="{{ '/blog.html' | relative_url }}">Writing</a>
+          <a href="{{ '/index.html#projects' | relative_url }}">Projects</a>
+          <a href="{{ '/index.html#contact' | relative_url }}">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <article class="article">
+        <p class="eyebrow">{{ page.category | default: 'Note' }}</p>
+        <h1>{{ page.title }}</h1>
+        <p class="article-meta">Published on {{ page.date | date: '%Y-%m-%d' }}</p>
+        {{ content }}
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p><a href="{{ '/blog.html' | relative_url }}">Back to Blog Archive</a></p>
+    </footer>
+  </body>
+</html>
