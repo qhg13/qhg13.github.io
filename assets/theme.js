@@ -7,6 +7,7 @@ const themes = [
 const storageKey = "homepage-theme";
 const rootElement = document.documentElement;
 const toggleButtons = document.querySelectorAll("[data-theme-toggle]");
+const scrollTopLinks = document.querySelectorAll("[data-scroll-top]");
 
 function findTheme(themeName) {
   return themes.find((theme) => theme.name === themeName) || themes[0];
@@ -50,5 +51,16 @@ toggleButtons.forEach((button) => {
     const nextThemeName = getNextThemeName();
     applyTheme(nextThemeName);
     saveTheme(nextThemeName);
+  });
+});
+
+scrollTopLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
   });
 });

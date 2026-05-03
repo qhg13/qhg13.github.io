@@ -1,4 +1,4 @@
-title: Your Name
+title: Qihao Geng
 description: Personal homepage, study notes, projects, and blog archive.
 url: "https://your-github-username.github.io"
 baseurl: ""
@@ -12,4 +12,4 @@ defaults:
       type: "posts"
     values:
       layout: post
-      author: Your Name
+      author: Qihao Geng

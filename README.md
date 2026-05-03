@@ -105,7 +105,7 @@ category: Study Note
 
 部署前建议替换以下内容：
 
-- `index.html`、`blog.html`、`_layouts/post.html` 中的 `Your Name`、`Your Nickname`、`your-github-username`、`your-email@example.com`。
+- `index.html`、`blog.html`、`_layouts/post.html` 中的 `Your Nickname`、`your-github-username`、`your-email@example.com`。
 - `_config.yml` 中的 `title`、`description`、`url`。
 - `assets/avatar.svg` 可以替换为个人头像图片，并同步修改 `index.html` 中的图片路径。
 - `_posts/2026-05-02-github-pages-homepage.md` 可以替换为真实博客内容。

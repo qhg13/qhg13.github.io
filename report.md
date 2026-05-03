@@ -2,13 +2,14 @@
 
 ## 1. 个人主页介绍
 
-本项目实现了一个可部署到 GitHub Pages 的个人主页。主页主要内容包括个人简介、学习方向、项目展示、博客入口和联系方式。网页主体语言使用英文，便于形成更通用的个人学术或技术主页风格。
+本项目实现了一个可部署到 GitHub Pages 的个人主页。主页主要内容包括个人简介、学习方向、项目展示、博客入口和联系方式。网页主体语言为英文。
 
 页面结构与功能说明：
 
 - 首页 `index.html`：展示个人简介、兴趣标签、学习方向、最近博客、项目展示和联系方式。
 - 博客页 `blog.html`：作为博客归档入口，通过 Jekyll 自动读取 `_posts/` 中的 Markdown 文章。
 - 文章模板 `_layouts/post.html`：统一控制博客文章页面结构。
+- 博客文章 `_posts` : 编写博客文章。
 - 示例文章 `_posts/2026-05-02-github-pages-homepage.md`：记录 GitHub Pages 个人主页搭建流程。
 - 样式文件 `assets/style.css`：提供现代清爽、科技感和莫兰迪风格两套视觉效果，并支持移动端适配。
 - 主题脚本 `assets/theme.js`：实现导航栏主题按钮，用户可以在默认科技风和莫兰迪风之间切换。
@@ -16,10 +17,10 @@
 主页访问链接：
 
 ```text
-https://你的GitHub用户名.github.io/
+https://qhg13.github.io/
 ```
 
-该链接需要在部署到个人 GitHub Pages 仓库后替换为真实地址。
+
 
 ## 2. 博客
 
@@ -60,10 +61,6 @@ https://你的GitHub用户名.github.io/
 
 遇到的问题及解决方法：
 
-- 问题：当前项目初始状态只有课程 PDF，没有现成网页入口。
-  解决方法：从零创建 GitHub Pages 可识别的 `index.html`，保证根路径可以正常访问。
-- 问题：个人真实信息暂未确定。
-  解决方法：使用英文占位文本，后续可直接替换姓名、邮箱、GitHub 用户名、项目链接和头像。
 - 问题：手写 HTML 博客不利于长期维护。
   解决方法：改用 GitHub Pages 原生支持的 `Markdown + Jekyll`，以后只需在 `_posts/` 中写 Markdown。
 - 问题：GitHub Pages 公开仓库会暴露网页源码。
@@ -86,3 +83,22 @@ GitHub Pages 部署个人网页的局限性：
 - 如果使用公开仓库，HTML、CSS、Markdown、图片和提交历史通常都会公开。
 - 国内访问速度和稳定性可能受网络环境影响。
 - 构建环境有限，复杂前端工程或自定义插件需要额外部署方案。
+
+## 4.AI Agent 使用说明
+- 主要使用 opencode cli, 接入 gpt-5.5 模型, 一些小问题也询问了 gemini。
+- 计划由我和AI讨论, 传入了助教的主页让其参考实现, 随后 Build 基本全盘由Agent完成。
+- 我做的修改为个人信息的修改以及博客内容的编写。
+- AI Agent 很强大, 感觉一年内进化了非常多。
+
+## 5.结果展示
+
+<figure>
+  <img src="assets/image.png" alt="个人主页截图" width="400">
+  <figcaption>Figure 1. 个人主页截图。</figcaption>
+</figure>
+
+<figure>
+  <img src="assets/image-1.png" alt="博客页截图" width="400">
+  <figcaption>Figure 2. 博客页截图。</figcaption>
+</figure>
+
