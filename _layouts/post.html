@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="tech">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +15,7 @@
           <a href="{{ '/blog.html' | relative_url }}">Writing</a>
           <a href="{{ '/index.html#projects' | relative_url }}">Projects</a>
           <a href="{{ '/index.html#contact' | relative_url }}">Contact</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">Theme: Tech</button>
         </div>
       </nav>
     </header>
@@ -31,5 +32,6 @@
     <footer class="footer">
       <p><a href="{{ '/blog.html' | relative_url }}">Back to Blog Archive</a></p>
     </footer>
+    <script src="{{ '/assets/theme.js' | relative_url }}"></script>
   </body>
 </html>

@@ -10,7 +10,8 @@
 - 博客页 `blog.html`：作为博客归档入口，通过 Jekyll 自动读取 `_posts/` 中的 Markdown 文章。
 - 文章模板 `_layouts/post.html`：统一控制博客文章页面结构。
 - 示例文章 `_posts/2026-05-02-github-pages-homepage.md`：记录 GitHub Pages 个人主页搭建流程。
-- 样式文件 `assets/style.css`：提供现代清爽、科技感和轻漫画风格结合的视觉效果，并支持移动端适配。
+- 样式文件 `assets/style.css`：提供现代清爽、科技感和莫兰迪风格两套视觉效果，并支持移动端适配。
+- 主题脚本 `assets/theme.js`：实现导航栏主题按钮，用户可以在默认科技风和莫兰迪风之间切换。
 
 主页访问链接：
 
@@ -36,7 +37,8 @@ https://你的GitHub用户名.github.io/
 使用的主要工具或技术：
 
 - HTML：编写主页、博客归档和文章模板结构。
-- CSS：实现页面布局、卡片边框、光晕背景、网格纹理、按钮动效和响应式适配。
+- CSS：实现页面布局、卡片边框、光晕背景、网格纹理、按钮动效、莫兰迪主题和响应式适配。
+- JavaScript：监听主题按钮点击，切换页面根元素的 `data-theme` 属性，并通过 `localStorage` 保存用户选择。
 - SVG：提供默认头像占位图。
 - Markdown：用于撰写博客文章。
 - Jekyll：用于将 Markdown 博客文章渲染为静态网页。
@@ -51,9 +53,10 @@ https://你的GitHub用户名.github.io/
 3. 编写 `blog.html`，使用 Jekyll 模板语法自动展示 `_posts/` 中的文章。
 4. 编写 `_layouts/post.html`，统一博客文章页面结构。
 5. 编写 `_posts/2026-05-02-github-pages-homepage.md`，作为 Markdown 示例文章。
-6. 编写 `assets/style.css`，将页面外观调整为现代清爽、科技感和轻漫画风格结合的设计。
-7. 将项目推送到 `你的GitHub用户名.github.io` 仓库。
-8. 在 GitHub 仓库设置中启用 GitHub Pages，从 `main` 分支根目录部署。
+6. 编写 `assets/style.css`，将页面外观调整为现代清爽、科技感和莫兰迪风格可切换的设计。
+7. 编写 `assets/theme.js`，实现浏览器端主题切换和主题记忆功能。
+8. 将项目推送到 `你的GitHub用户名.github.io` 仓库。
+9. 在 GitHub 仓库设置中启用 GitHub Pages，从 `main` 分支根目录部署。
 
 遇到的问题及解决方法：
 
@@ -65,6 +68,10 @@ https://你的GitHub用户名.github.io/
   解决方法：改用 GitHub Pages 原生支持的 `Markdown + Jekyll`，以后只需在 `_posts/` 中写 Markdown。
 - 问题：GitHub Pages 公开仓库会暴露网页源码。
   解决方法：仅放置可公开内容，不在仓库中保存密钥、Token、隐私资料或未公开文件。
+- 问题：手机屏幕宽度较小，多列卡片和首屏双栏布局会显得拥挤。
+  解决方法：增加移动端断点，将首屏、卡片、博客归档和项目展示调整为单列布局，并缩小边距、圆角和按钮尺寸。
+- 问题：单一配色不够个性化。
+  解决方法：使用 CSS 变量组织颜色，新增低饱和莫兰迪主题，通过 JavaScript 切换根元素主题属性。
 
 GitHub Pages 部署个人网页的优势：
 

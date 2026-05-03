@@ -3,6 +3,7 @@
   --bg: #f6f8ff;
   --paper: #fffdf8;
   --panel: rgba(255, 255, 255, 0.78);
+  --panel-soft: rgba(244, 248, 255, 0.76);
   --panel-solid: #ffffff;
   --ink: #172033;
   --muted: #657086;
@@ -12,8 +13,47 @@
   --cyan: #35d4ff;
   --violet: #8d6bff;
   --manga: #ff8f6b;
+  --accent: #315bd8;
+  --surface-glass: rgba(255, 255, 255, 0.74);
+  --header-bg: rgba(246, 248, 255, 0.76);
+  --hero-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 253, 248, 0.72));
+  --hero-glow: rgba(90, 140, 255, 0.16);
+  --avatar-bg: linear-gradient(135deg, rgba(53, 212, 255, 0.16), rgba(255, 143, 107, 0.16)), #fff;
+  --glow-one: rgba(90, 140, 255, 0.22);
+  --glow-two: rgba(255, 143, 107, 0.24);
+  --glow-three: rgba(53, 212, 255, 0.16);
+  --grid-line: rgba(23, 32, 51, 0.045);
   --shadow: 0 26px 80px rgba(28, 46, 82, 0.16);
   --soft-shadow: 0 18px 42px rgba(28, 46, 82, 0.10);
+}
+
+/* 莫兰迪主题使用低饱和暖灰、雾粉和鼠尾草绿，避免高亮色过于刺眼。 */
+:root[data-theme="morandi"] {
+  --bg: #eee9df;
+  --paper: #f7f1e8;
+  --panel: rgba(250, 246, 238, 0.84);
+  --panel-soft: rgba(232, 224, 213, 0.78);
+  --panel-solid: #faf6ee;
+  --ink: #3c3934;
+  --muted: #756f66;
+  --line: rgba(92, 82, 72, 0.16);
+  --line-strong: rgba(92, 82, 72, 0.26);
+  --blue: #8f9f92;
+  --cyan: #a7b6ad;
+  --violet: #b79a94;
+  --manga: #c5a46d;
+  --accent: #7d8f81;
+  --surface-glass: rgba(250, 246, 238, 0.72);
+  --header-bg: rgba(238, 233, 223, 0.82);
+  --hero-bg: linear-gradient(135deg, rgba(250, 246, 238, 0.9), rgba(232, 224, 213, 0.76));
+  --hero-glow: rgba(183, 154, 148, 0.18);
+  --avatar-bg: linear-gradient(135deg, rgba(167, 182, 173, 0.28), rgba(197, 164, 109, 0.18)), #f8f3ea;
+  --glow-one: rgba(143, 159, 146, 0.24);
+  --glow-two: rgba(183, 154, 148, 0.26);
+  --glow-three: rgba(197, 164, 109, 0.16);
+  --grid-line: rgba(60, 57, 52, 0.045);
+  --shadow: 0 26px 80px rgba(74, 65, 56, 0.14);
+  --soft-shadow: 0 18px 42px rgba(74, 65, 56, 0.10);
 }
 
 * {
@@ -28,11 +68,11 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 18% 12%, rgba(90, 140, 255, 0.22), transparent 30rem),
-    radial-gradient(circle at 86% 16%, rgba(255, 143, 107, 0.24), transparent 26rem),
-    radial-gradient(circle at 50% 92%, rgba(53, 212, 255, 0.16), transparent 34rem),
-    linear-gradient(rgba(23, 32, 51, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(23, 32, 51, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 18% 12%, var(--glow-one), transparent 30rem),
+    radial-gradient(circle at 86% 16%, var(--glow-two), transparent 26rem),
+    radial-gradient(circle at 50% 92%, var(--glow-three), transparent 34rem),
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
     var(--bg);
   background-size: auto, auto, auto, 36px 36px, 36px 36px, auto;
   color: var(--ink);
@@ -55,7 +95,7 @@ a:hover {
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--line);
-  background: rgba(246, 248, 255, 0.76);
+  background: var(--header-bg);
   backdrop-filter: blur(20px);
 }
 
@@ -76,9 +116,27 @@ a:hover {
 .nav-links {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.theme-toggle {
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface-glass);
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 850;
+  padding: 7px 13px;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .section {
@@ -98,8 +156,8 @@ a:hover {
   border: 1px solid var(--line-strong);
   border-radius: 42px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 253, 248, 0.72)),
-    radial-gradient(circle at 68% 26%, rgba(90, 140, 255, 0.16), transparent 22rem);
+    var(--hero-bg),
+    radial-gradient(circle at 68% 26%, var(--hero-glow), transparent 22rem);
   box-shadow: var(--shadow);
   padding: clamp(28px, 4.5vw, 58px);
   overflow: hidden;
@@ -142,7 +200,7 @@ a:hover {
 .eyebrow,
 .card-kicker {
   margin: 0 0 12px;
-  color: #315bd8;
+  color: var(--accent);
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.16em;
@@ -207,7 +265,7 @@ a:hover {
 }
 
 .button.secondary {
-  background: rgba(255, 255, 255, 0.74);
+  background: var(--surface-glass);
 }
 
 .quick-links {
@@ -235,11 +293,9 @@ a:hover {
 }
 
 .avatar-frame {
-  border: 1px solid rgba(90, 140, 255, 0.24);
+  border: 1px solid var(--line-strong);
   border-radius: 30px;
-  background:
-    linear-gradient(135deg, rgba(53, 212, 255, 0.16), rgba(255, 143, 107, 0.16)),
-    #fff;
+  background: var(--avatar-bg);
   padding: 15px;
 }
 
@@ -253,7 +309,7 @@ a:hover {
 
 .nickname {
   margin: 22px 0 8px;
-  color: #315bd8;
+  color: var(--accent);
   font-weight: 900;
 }
 
@@ -283,11 +339,11 @@ a:hover {
 }
 
 .tags span {
-  border: 1px solid rgba(90, 140, 255, 0.22);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.74);
+  background: var(--surface-glass);
   padding: 7px 13px;
-  color: #315bd8;
+  color: var(--accent);
   font-weight: 850;
 }
 
@@ -317,7 +373,7 @@ a:hover {
   gap: 16px;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.58);
+  background: var(--surface-glass);
   padding: 16px;
 }
 
@@ -336,7 +392,7 @@ a:hover {
 
 .section-heading a,
 .text-link {
-  color: #315bd8;
+  color: var(--accent);
   font-weight: 900;
 }
 
@@ -364,7 +420,7 @@ a:hover {
 }
 
 .muted-card {
-  background: rgba(244, 248, 255, 0.76);
+  background: var(--panel-soft);
 }
 
 .project-list,
@@ -437,7 +493,7 @@ a:hover {
 }
 
 .article {
-  background: rgba(255, 255, 255, 0.84);
+  background: var(--panel);
 }
 
 .article h1 {
@@ -453,7 +509,7 @@ code {
   border-radius: 8px;
   background: rgba(90, 140, 255, 0.10);
   padding: 0.12em 0.38em;
-  color: #315bd8;
+  color: var(--accent);
 }
 
 @media (max-width: 860px) {
@@ -484,5 +540,109 @@ code {
   .project-item {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav,
+  .section,
+  .footer,
+  .narrow-main,
+  .article-main {
+    width: min(100% - 22px, 1180px);
+  }
+
+  .site-header {
+    position: static;
+  }
+
+  .nav {
+    padding: 12px 0;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-links a,
+  .theme-toggle {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface-glass);
+    padding: 6px 10px;
+    font-size: 0.88rem;
+  }
+
+  .hero-shell {
+    gap: 26px;
+    padding: 24px 16px;
+    border-radius: 24px;
+  }
+
+  .hero-shell::before {
+    inset: 10px;
+    border-radius: 18px;
+  }
+
+  .hero-copy h1,
+  .page-title h1,
+  .article h1 {
+    font-size: clamp(2.45rem, 15vw, 4.1rem);
+    letter-spacing: -0.06em;
+  }
+
+  .hero-actions,
+  .quick-links,
+  .tags,
+  .contact ul {
+    gap: 10px;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 18px;
+  }
+
+  .profile-card,
+  .panel,
+  .card,
+  .project-item,
+  .archive-item,
+  .article {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .profile-card {
+    max-width: 100%;
+  }
+
+  .avatar-frame {
+    border-radius: 22px;
+    padding: 10px;
+  }
+
+  .profile-card img {
+    border-radius: 17px;
+  }
+
+  .section {
+    padding: 38px 0;
+  }
+
+  .stat-list div {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .project-item {
+    gap: 12px;
+  }
+
+  .article-main {
+    padding: 34px 0;
   }
 }

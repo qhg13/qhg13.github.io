@@ -3,7 +3,7 @@ title: Blog | Your Name
 description: Blog archive for study notes, project reviews, and technical writing.
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="tech">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +19,7 @@ description: Blog archive for study notes, project reviews, and technical writin
           <a href="{{ '/index.html#about' | relative_url }}">About</a>
           <a href="{{ '/index.html#projects' | relative_url }}">Projects</a>
           <a href="{{ '/index.html#contact' | relative_url }}">Contact</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">Theme: Tech</button>
         </div>
       </nav>
     </header>
@@ -47,5 +48,6 @@ description: Blog archive for study notes, project reviews, and technical writin
     <footer class="footer">
       <p><a href="{{ '/index.html' | relative_url }}">Back to Home</a></p>
     </footer>
+    <script src="{{ '/assets/theme.js' | relative_url }}"></script>
   </body>
 </html>

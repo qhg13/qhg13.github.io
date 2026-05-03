@@ -5,7 +5,8 @@
 ## 技术栈
 
 - `HTML`：编写首页、博客归档页和文章布局结构。
-- `CSS`：实现现代清爽、科技感、轻漫画风格的视觉设计与响应式布局。
+- `CSS`：实现现代清爽、科技感、莫兰迪主题切换和响应式布局。
+- `JavaScript`：实现前端配色切换，并用浏览器本地存储记住用户选择。
 - `SVG`：提供默认头像占位图，可替换为真实头像。
 - `Markdown`：用于撰写博客文章，避免每篇文章手写 HTML。
 - `Jekyll`：GitHub Pages 原生支持的静态站点生成器，用于把 `_posts/` 中的 Markdown 渲染为博客文章。
@@ -20,7 +21,8 @@
 - `_posts/2026-05-02-github-pages-homepage.md`：示例 Markdown 博客文章。
 - `_layouts/post.html`：博客文章页面模板。
 - `_config.yml`：Jekyll 配置文件，包含站点标题、链接格式和文章默认布局。
-- `assets/style.css`：全站样式文件，负责页面配色、边框、卡片、响应式布局和动效。
+- `assets/style.css`：全站样式文件，负责页面配色、莫兰迪主题、边框、卡片、响应式布局和动效。
+- `assets/theme.js`：主题切换脚本，点击导航栏中的主题按钮即可在科技风和莫兰迪风之间切换。
 - `assets/avatar.svg`：头像占位图，可替换为个人头像。
 - `docs/2026-课程大作业1.pdf`：课程要求文档。
 - `report.md`：课程报告，说明主页内容、博客访问方式和实现过程。
@@ -32,8 +34,15 @@
 - 页面结构：`index.html`、`blog.html`、`_layouts/post.html`
 - 博客文章：`_posts/*.md`
 - 页面样式：`assets/style.css`
+- 主题切换：`assets/theme.js`
 - 静态资源：`assets/`
 - 站点配置：`_config.yml`
+
+## 页面功能
+
+- 响应式设计：桌面端采用多列卡片和首屏双栏布局，移动端自动改为单列布局，导航、按钮和卡片间距会收紧，方便手机浏览。
+- 配色切换：导航栏中的 `Theme` 按钮可以在默认科技风和莫兰迪风之间切换。
+- 主题记忆：浏览器会通过 `localStorage` 保存上次选择的配色，下次访问时自动恢复。
 
 ## 本地预览
 
@@ -120,4 +129,4 @@ category: Study Note
 
 ## 验证结果
 
-当前项目没有 `npm` 依赖、没有 React 构建步骤、没有测试框架。已检查核心文件结构和主要相对链接；Jekyll 动态文章列表需要由 GitHub Pages 或本地 Jekyll 渲染。
+当前项目没有 `npm` 依赖、没有 React 构建步骤、没有测试框架。已检查核心文件结构、主题切换脚本和主要相对链接；Jekyll 动态文章列表需要由 GitHub Pages 或本地 Jekyll 渲染。
