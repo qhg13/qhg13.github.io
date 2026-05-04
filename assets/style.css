@@ -527,6 +527,26 @@ code {
   color: var(--accent);
 }
 
+/* 代码块单独使用整块背景，避免继承行内 code 的碎片化底色。 */
+.article pre {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(23, 32, 51, 0.06);
+  padding: 18px 20px;
+}
+
+.article pre code {
+  display: block;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  white-space: pre;
+}
+
 @media (max-width: 860px) {
   .nav {
     align-items: flex-start;
