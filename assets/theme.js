@@ -8,6 +8,7 @@ const storageKey = "homepage-theme";
 const rootElement = document.documentElement;
 const toggleButtons = document.querySelectorAll("[data-theme-toggle]");
 const scrollTopLinks = document.querySelectorAll("[data-scroll-top]");
+const scrollProgressBar = document.querySelector("[data-scroll-progress]");
 
 function findTheme(themeName) {
   return themes.find((theme) => theme.name === themeName) || themes[0];
@@ -44,6 +45,16 @@ function getNextThemeName() {
   return themes[nextIndex].name;
 }
 
+function updateScrollProgress() {
+  if (!scrollProgressBar) {
+    return;
+  }
+
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+  scrollProgressBar.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
+}
+
 applyTheme(readSavedTheme() || rootElement.dataset.theme);
 
 toggleButtons.forEach((button) => {
@@ -64,3 +75,7 @@ scrollTopLinks.forEach((link) => {
     }
   });
 });
+
+updateScrollProgress();
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress);

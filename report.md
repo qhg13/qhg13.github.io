@@ -11,7 +11,7 @@
 - 文章模板 `_layouts/post.html`：统一控制博客文章页面结构。
 - 博客文章 `_posts` : 编写博客文章。
 - 样式文件 `assets/style.css`：提供现代清爽、科技感和莫兰迪风格两套视觉效果，并支持移动端适配。
-- 主题脚本 `assets/theme.js`：实现导航栏主题按钮，用户可以在默认科技风和莫兰迪风之间切换。
+- 主题脚本 `assets/theme.js`：实现导航栏主题按钮和页面滚动进度条，用户可以在默认科技风和莫兰迪风之间切换。
 
 ### 主页访问链接：
 
@@ -63,8 +63,8 @@ https://qhg13.github.io/
 3. 编写 `blog.html`，使用 Jekyll 模板语法自动展示 `_posts/` 中的文章。
 4. 编写 `_layouts/post.html`，统一博客文章页面结构。
 5. 编写 `_posts/2026-05-02-github-pages-homepage.md`，作为 Markdown 示例文章。
-6. 编写 `assets/style.css`，将页面外观调整为现代清爽、科技感和莫兰迪风格可切换的设计。
-7. 编写 `assets/theme.js`，实现浏览器端主题切换和主题记忆功能。
+6. 编写 `assets/style.css`，将页面外观调整为现代清爽、科技感和莫兰迪风格可切换的设计，并优化学习路线和博客页布局。
+7. 编写 `assets/theme.js`，实现浏览器端主题切换、主题记忆功能和滚动进度显示。
 8. 将项目推送到 `你的GitHub用户名.github.io` 仓库。
 9. 在 GitHub 仓库设置中启用 GitHub Pages，从 `main` 分支根目录部署。
 
@@ -110,4 +110,3 @@ GitHub Pages 部署个人网页的局限性：
   <img src="assets/image-1.png" alt="博客页截图" width="400">
   <figcaption>Figure 2. 博客页截图。</figcaption>
 </figure>
-
