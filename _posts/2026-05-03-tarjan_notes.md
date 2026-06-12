@@ -1,6 +1,7 @@
 ---
 title: tarjan algorithm for finding scc
 category: Study Note
+pdf: /assets/pdfs/tarjan1972.pdf
 ---
 
 本文介绍寻找有向图的强连通分量的 tarjan 算法.

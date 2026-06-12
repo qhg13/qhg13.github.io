@@ -35,7 +35,21 @@ description: Blog archive for study notes, project reviews, and technical writin
       <section class="section archive-list" aria-label="Blog posts">
         {% for post in site.posts %}
         <article class="archive-item">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+          <div class="archive-left">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+            {% if post.pdf %}
+            <!-- PDF 附件图标：点击可在新标签页打开/下载 PDF -->
+            <a class="pdf-badge" href="{{ post.pdf | relative_url }}" target="_blank" title="View PDF" aria-label="Open PDF attachment">
+              <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <path d="M9 15v-2h1.5a1.5 1.5 0 0 1 0 3H9zm0 0v2"/>
+                <path d="M13 13h1.5a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5H13v-4z"/>
+              </svg>
+              <span class="pdf-label">PDF</span>
+            </a>
+            {% endif %}
+          </div>
           <div>
             <p class="card-kicker">{{ post.category | default: 'Note' }}</p>
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>

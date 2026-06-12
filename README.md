@@ -85,6 +85,50 @@ category: Study Note
 
 正文直接使用 Markdown 编写。GitHub Pages 发布时会自动生成文章页面，并在 `blog.html` 中展示。
 
+### PDF 博客
+
+支持两种 PDF 发布模式：
+
+#### 模式一：PDF 作为 Markdown 博客的补充材料
+
+在 Front Matter 中加入 `pdf` 字段指向 PDF 文件路径：
+
+```yaml
+---
+title: Tarjan Algorithm Notes
+category: Study Note
+pdf: /assets/pdfs/tarjan1972.pdf
+---
+```
+
+效果：
+- `blog.html` 归档列表中，该文章卡片左侧会显示一个红色 PDF 文件图标，点击可打开 PDF。
+- 文章详情页顶部会有一个"Open PDF in new tab"提示栏。
+- 文章正文仍然显示 Markdown 内容。
+
+#### 模式二：PDF 作为完整博客（嵌入显示）
+
+在 Front Matter 中同时设置 `pdf` 和 `pdf_only: true`：
+
+```yaml
+---
+title: "Paper: Some Paper Title"
+category: Paper
+pdf: /assets/pdfs/some_paper.pdf
+pdf_only: true
+---
+简短摘要（仅用于归档列表的摘要展示，正文不会渲染）。
+```
+
+效果：
+- `blog.html` 归档列表同样显示 PDF 图标。
+- 文章详情页会嵌入 PDF 预览（占据 80vh 高度），不显示 Markdown 正文。
+- 不支持 PDF 嵌入的浏览器会显示下载链接 fallback。
+
+#### PDF 文件存放
+
+所有博客附件 PDF 统一存放在 `assets/pdfs/` 目录。
+
 ## GitHub Pages 部署
 
 推荐将仓库命名为：

@@ -552,6 +552,101 @@ a:hover {
   gap: 24px;
 }
 
+/* 左侧列：日期 + PDF 图标纵向排列 */
+.archive-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* PDF 图标按钮（blog 归档列表中），紧跟日期下方 */
+.pdf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #d44638;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.pdf-badge:hover {
+  background: rgba(212, 70, 56, 0.08);
+  transform: scale(1.05);
+  color: #d44638;
+}
+
+.pdf-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.pdf-label {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ---- 文章页 PDF 附件提示栏 ---- */
+.pdf-attachment {
+  margin: 18px 0 28px;
+  padding: 14px 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-glass);
+}
+
+.pdf-attachment-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d44638;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.pdf-attachment-link:hover {
+  color: #b5342a;
+}
+
+.pdf-attachment-link .pdf-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---- 纯 PDF 博客嵌入容器 ---- */
+.pdf-embed-container {
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.pdf-embed {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  border: none;
+}
+
+.pdf-fallback {
+  display: none;
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* 当 embed 不被支持时显示 fallback（依靠 JS 或手动触发） */
+.pdf-embed-container:not(:has(embed)) .pdf-fallback,
+.pdf-embed[type="application/pdf"]:not([src]) ~ .pdf-fallback {
+  display: block;
+}
+
 .archive-item time,
 .article-meta {
   color: var(--muted);
